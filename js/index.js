@@ -2,7 +2,7 @@ $(document).ready(function(){
 	// 导航条运动
 	$(".button").click(function(){
 		$(".content").css({top: "10%",transform: "none"});
-		$(".nav-content").css({opacity: 1});
+		$(".nav-content").css({opacity: 1,display: "block"});
 		$(".nav-content").eq(0).css({bottom:"75px",
 	left:"20%"});
 		$(".nav-content").eq(1).css({bottom:"75px",
@@ -11,7 +11,7 @@ $(document).ready(function(){
 	left:"80%"});
 		
 		$("nav").mouseleave(function(){
-			$(".nav-content").css({opacity: 0});
+			$(".nav-content").css({opacity: 0,display: "none"});
 			$(".content").css({top: "50%",transform: "translateY(-50%)"});
 		})
 	});
@@ -24,21 +24,36 @@ $(document).ready(function(){
 	// 简历	
  	$(".resume").click(function(){
  		$(".main-loading").css({display:"block"});//打开加载区
- 		$(".verify").css({display:"block"});
+ 		$(".resumedown").css({display:"block"});
  		$(".main-loading").css({display:"none"});//关闭加载区
  	});
  		
  	$(".iconiconfontzhizuobiaozhun46").click(function(){
- 		$(".verify").css({display:"none"});
+ 		$(".resumedown").css({display:"none"});
+ 		$(".download").css({display:"none"});
  		$(":password").val("");
  	});
-
+ 	var verobj = {
+ 		"resume_load": "resume.html",
+ 		"resume_word": "03030303",
+ 		"file_load": "file/莫大计算机研究生入系资料.rar",
+ 		"file_word": "00000000"
+ 	};
  	$(":submit").click(function(){
- 		var $pwi = $(":password").val();
- 		var $pw = "like5092"
+ 		if($(this).attr("id") == "resume_load"){
+ 			var $pw = verobj["resume_word"];
+ 			var locat = verobj["resume_load"];
+ 			var $pwi = $(":password").eq(0).val();
+ 		}
+ 		else{
+ 			var $pw = verobj["file_word"];
+ 			var locat = verobj["file_load"];
+ 			var $pwi = $(":password").eq(1).val();
+ 		}
  		if($pwi == $pw){
- 			window.location.href="resume.html";
- 			$(".verify").css({display:"none"});
+ 			window.location.href = locat;
+ 			$(".resumedown").css({display:"none"});
+ 			$(".download").css({display:"none"});
  			$(":password").val("");
  		}else{
  			$(":password").css({background:"red"});
@@ -50,7 +65,9 @@ $(document).ready(function(){
 
  	// 文件下载
 	$(".file").click(function(){
+		$(".main-loading").css({display:"block"});//打开加载区
  		$(".download").css({display:"block"});
+ 		$(".main-loading").css({display:"none"});//关闭加载区
  	});
 
  	// 个人主页

@@ -3,6 +3,9 @@ body,html{
     height: 100%;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-image: url("../images/bg.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    /*background-repeat: no-repeat;*/
     color: white;
     overflow: hidden;
     text-align: center;
@@ -17,7 +20,7 @@ body,html{
     width: 100%;
     height: 100%;
     background: black;
-    z-index: 99;
+    z-index: 999;
 }
 .main-loading .loading-con {
     position: absolute;

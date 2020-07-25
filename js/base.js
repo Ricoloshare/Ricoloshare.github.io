@@ -12,5 +12,9 @@ $(document).ready(function(){
 		});
 		$sec.append($div);
 	}
-	$(".main-loading").css({display:"none"});	
+	var oimg = new Image();
+	oimg.src = "images/bg.jpg";
+	oimg.onload = function(){
+		$(".main-loading").css({display:"none"});	
+	}
 });
