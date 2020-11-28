@@ -17,9 +17,26 @@
         }
         h2{
             margin: 30px auto;
+            margin-bottom: 10px;
         }
-        span{
+        p{
             color: rgb(175, 13, 13);
+            font-size: 25px;
+            margin-bottom: 30px;
+        }
+        .win{
+            width: 400px;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 30px;
+            box-shadow: 1px 1px 5px 1px #ccc;
+            display: none;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
         }
         ul{
             list-style-type: none;
@@ -42,25 +59,33 @@
     </style>
 </head>
 <body>
-    <h2>请点击图片中的 <span></span></h2>
+    <h2>请点击图片中的</h2>
+    <p></p>
     <ul>
         <li><img src="img/beef.jpg" alt="beef"></li>
         <li><img src="img/carrot.jpg" alt="carrots"></li>
         <li><img src="img/chciken.jpg" alt="chicken"></li>
         <li><img src="img/rice.jpg" alt="rice"></li>
     </ul>
+    <div class="win">
+      <h1>荣获“光盘小卫士”</h1>  
+      <img src="img/win.jpg" alt="">
+    </div>
+    
     <script src="jquery.js"></script>
     <script>
         let words = ['Carrots','Beef','Rice','Chicken'];
-        $('span').html(words[0]);
+        $('p').html(words[0]);
         if(words.length != 0){
             $('img').click(function(){
                 if(this.alt.toLowerCase() === words[0].toLowerCase()){
                     $(this).css("display","none");
                     words.shift();
-                    $('span').html(words[0]);
+                    $('p').html(words[0]);
                     if(words.length == 0){
                         $('h2').html("恭喜光盘");
+                        $('.win').css("display","block");
+                        $('p').css("display","none");
                     }
                 }
             });
