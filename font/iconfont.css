@@ -1,0 +1,29 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1607868503294'); /* IE9 */
+  src: url('iconfont.eot?t=1607868503294#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAOwAAsAAAAAB7AAAANiAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDHAqCZII5ATYCJAMQCwoABCAFhG0HThuxBsi+QQaHK8BPtMCYy7DYtMgW5ejNe50Q9+NHVQTRWlk9O/e/T6hCQBKYFSpAlSh2xDpsHKBkHf3/qzP/AbEOERRbdhxSnqIcABYQR+CZtna6vh1omNoFV1xwPOCEFV32LFk6QKg2XycsABJKlmXqFjGy4tUARfr8OqCqq1sOBP1nL22/AZfTn/YCrbMst7EW7UXRmIAJBroHRoFMoAIp54axC1riaQK1ekhiMa+mqQvsZeakQOxXZAz2GZvcUBlKoapiZRZXoEyX0nA5+Hz8MyZKkkrBnLl4Z7UIZT/xM3UljyCfzgO2jgLDgEzsrvRtZRUlh7FSq/7G2gSgVEr85Kc//9DBhqWWnzT4z4sqZnk9GAdTBT9xxCR+KqvSBxUPUJVB6YlK9gBnmFw3t5WENDB362F98t52XFfHqW3vuBOLPvFiV9udK0+fOXloZ68cf3LHL/H0km9H7/0l0XFX94xzuv5m+3WgVf39d0tvnFTcer/zKsCywX2VxZda/+6gy5/rehlw9u2k5RSnXsR+hQ8fuur9pbqonXD7+0XP9A98KD2vDocJHXgRsZR2PjDyzIuB0JSkX5U7v/y5ds1WzejNf3BsEvKOVDc12RvD3icX7yZgfrNdjInqBU0BkAHapkbtRMUuFKZ4JKXEWa4ZqwM8ai3ZWziY7qZ21avksSHLZVfe2/n44qmLMEDXLkjHK1IIQPqR/kHfcbvn/za5TftfmsHXEwa7ZHRPlRJM/jvkHTuypjTtOSsqR6YHsqGD4wm1lpOfkKXVtylMHXeaDqWOBEm17iiU+pGZHYaKOuNQpTQTtYaqXV+nDWMlcg2GWAMIzR4jafQehWYfycweoqLTL1RpjgK1VkbbjnUGxB7HuYxgTkSkmkKKQA2S7eSOYWUHkc06zNLKgNdDmEmJoPSUtHymlhgIm2KOaVzO4FxCEqN6VAPOIzodRUZGNUTgKWrOjQWpqVLVlVIEqgdHczEExhEiRGUKohBQBpLXn3MsvL8DITPTwVhDTVWyB8GYKIMj6VKkdSBrdYZONbdyick4WQaOkyAShtJDaoCH0FlJCjFWD9MgBFwK9YC4UYFU1EvqqktZ3qB/gVLWgLljjhRF5KhoOabIZmxIzsgaVQcJFTak2z0ET6Ng26MJNaYAAAA=') format('woff2'),
+  url('iconfont.woff?t=1607868503294') format('woff'),
+  url('iconfont.ttf?t=1607868503294') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1607868503294#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xiguan-24_huaban1:before {
+  content: "\e6fa";
+}
+
+.icon-iconjia:before {
+  content: "\e600";
+}
+
+.icon-wenhao:before {
+  content: "\e645";
+}
+

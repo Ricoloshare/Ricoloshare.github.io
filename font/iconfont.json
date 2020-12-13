@@ -1,0 +1,30 @@
+{
+  "id": "2267392",
+  "name": "cold",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16208965",
+      "name": "吸管-24",
+      "font_class": "xiguan-24_huaban1",
+      "unicode": "e6fa",
+      "unicode_decimal": 59130
+    },
+    {
+      "icon_id": "2904605",
+      "name": "加号",
+      "font_class": "iconjia",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "8743418",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e645",
+      "unicode_decimal": 58949
+    }
+  ]
+}

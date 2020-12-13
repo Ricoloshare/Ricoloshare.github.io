@@ -1,0 +1,180 @@
+*{
+  margin: 0;
+  bottom: 0;
+  box-sizing: border-box;
+}
+body,html{
+  width: 100%;  
+  height: 100%;
+  background-color: white;    
+  margin: 0;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+canvas{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  display: none;
+  animation: sca 1s linear 0.2s 1 forwards;
+}
+#mouseD{
+  width: 250px;
+  height: 250px;
+  padding-top: 35px;
+  position: absolute;
+  /* display: none; */
+}
+#mouseD p{
+  width: auto;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 0 10px;
+  color: #000;
+  background: white;
+  display: none;
+}
+#mouseD img{
+  width: 80px;
+  height: 80px;
+}
+.aboutblack{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.aboutwhite{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+section{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#page1 img{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 99;
+}
+#page2{
+  display: none;
+}
+.picall{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+.picall .leftButton{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.picall .leftButton p{
+  width: 80%;
+  height: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.picall .leftButton p:nth-child(2){
+  margin-top: 30%;
+}
+.picall .rightPic{
+  width: 70%;
+  height: 100%;
+  background: rgb(255, 255, 255,0.3);
+  z-index: 999;
+}
+.picall .rightPic .toplogo{
+  width: 100%;
+  height: 10%;
+  position: relative;
+}
+.picall .rightPic ul{
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+.picall .rightPic ul li{
+  padding-left: 10px;
+  padding-top: 10px;
+  width: 210px;
+  height: 280px;
+}
+.picall .rightPic ul li img{
+  width: 100%;
+  height: 100%;
+}
+@keyframes sca{
+  0%{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  80%{
+    width: 1000px;
+    height: 1000px;
+  }
+  98%{
+    width: 220%;
+    height: 220%;
+    top: 1%;
+    left: 1%;
+    transform: translate(-10%,-10%);
+    border-radius: 50%;
+  }
+  100%{
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+}
