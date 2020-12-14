@@ -37,7 +37,8 @@ let options = { attributes: true};
 function callback(mutationsList, observer) {
   console.log(111111111);
   let rd = $('#canvas').css('border-radius');
-  if(rd == '0px'){
+  if(rd == '0px' || rd == '0'){
+    alert(111111111);
     page2.style.display = 'block';
     drawM.style.display = 'block';
     page2Flag = 1;
