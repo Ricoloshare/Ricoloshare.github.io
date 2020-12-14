@@ -31,9 +31,20 @@ $('.rightPic img').click(function(e){
   e.stopPropagation();
   console.log(this,$('.rightPic img').index(this))
 });
-
-
-
+let targetNode = $('#canvas')[0];//content监听的元素id
+let options = { attributes: true};
+//回调事件
+function callback(mutationsList, observer) {
+  console.log(111111111);
+  let rd = $('#canvas').css('border-radius');
+  if(rd == '0px'){
+    page2.style.display = 'block';
+    drawM.style.display = 'block';
+    page2Flag = 1;
+  }
+}
+let mutationObserver = new MutationObserver(callback);
+mutationObserver.observe(targetNode, options);
 // 鼠标链接滴管
 document.body.onmousemove = function(e) {
   let left = e.clientX - 40;
@@ -41,15 +52,6 @@ document.body.onmousemove = function(e) {
   
   mouseD.style.left=left + "px";
   mouseD.style.top=top + "px";
-
-  if(canvasScaleFlag && page2Flag == 0){
-    let rd = $('#canvas').css('border-radius');
-    if(rd == '0px'){
-      page2.style.display = 'block';
-      drawM.style.display = 'block';
-      page2Flag = 1;
-    }
-  }
 
 }
 

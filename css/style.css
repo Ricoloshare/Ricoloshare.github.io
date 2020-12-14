@@ -140,6 +140,7 @@ section{
   list-style-type: none;
   flex-wrap: wrap;
   overflow: auto;
+  padding: 0;
 }
 .picall .rightPic ul li{
   padding-left: 10px;
