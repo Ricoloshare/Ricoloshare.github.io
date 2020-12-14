@@ -22,9 +22,12 @@ document.body.onclick = function(e){
     drawM.style.display = 'none';
     $('.picall').css('display','flex');
     $('.logoNav').css('display','none');
-    for(let i = 0; i < imgUrl.length;i++){
-      $('.rightPic ul').append(`<li><a href="#"><img src='${imgUrl[i]}' alt=""></a><span></span></li>`);
-      $('.rightPic ul span').eq(i).css('background',imgColor[i]);
+    if($('.rightPic ul li').length < imgUrl.length){
+      $('.rightPic ul').empty();
+      for(let i = 0; i < imgUrl.length;i++){
+        $('.rightPic ul').append(`<li><a href="#"><img src='${imgUrl[i]}' alt=""></a><span></span></li>`);
+        $('.rightPic ul span').eq(i).css('background',imgColor[i]);
+      }
     }
   }else if(dropMM == 1){
     mouseD.style.display = 'none';

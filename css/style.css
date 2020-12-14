@@ -11,6 +11,16 @@ body,html{
   overflow: hidden;
   background-repeat: no-repeat;
 }
+.logoNav{
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+.logoSmall{
+  padding-top: 20px;
+  width: 60px;
+  height: 60px;
+}
 p{
   width: 80%;
   height: auto;
