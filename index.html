@@ -7,7 +7,10 @@
 <meta name="keywords" content="lab" />
 <meta name="description" content="lab" /> 
 <link rel="stylesheet" href="font/iconfont.css">
+<link rel="stylesheet" type="text/css" href="css/spectrum.css">
 <link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/spectrum.js"></script>
 </head>
 <body>
 <canvas id="canvas"></canvas>
@@ -27,26 +30,60 @@
                 <span class="iconfont icon-wenhao aboutblack"></span>
             </div>
             <ul>
-                <li><a href="#"><img src="img/memory (1).jpg" alt=""></a></li>
+                <!-- <li><a href="#"><img src="img/memory (1).jpg" alt=""></a><span></span></li>
                 <li><a href="#"><img src="img/memory (2).jpg" alt=""></a></li>
                 <li><a href="#"><img src="img/memory (3).jpg" alt=""></a></li>
                 <li><a href="#"><img src="img/memory (4).jpg" alt=""></a></li>
                 <li><a href="#"><img src="img/memory (5).jpg" alt=""></a></li>
                 <li><a href="#"><img src="img/memory (6).jpg" alt=""></a></li>
                 <li><a href="#"><img src="img/memory (7).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (8).jpg" alt=""></a></li>
+                <li><a href="#"><img src="img/memory (8).jpg" alt=""></a></li> -->
             </ul>
+        </div>
+    </div>
+    <div class="picShow centerStyle">
+        <div class="top">
+            <img src="img/memory (2).jpg" alt="">
+            <p>111112233123</p>
+        </div>
+        <div class="bottom">
+            <p>BACK</p>
+            <span class="iconfont icon-guanbi closeblack"></span>
+        </div>
+    </div>
+    <div class="picWrite centerStyle">
+        <div class="top">
+            <div class="ttop">
+                <div class="file">
+                    <img src="" alt="">
+                    <div class="bb centerStyle">
+                        <span class="iconfont icon-iconjia uploadFile centerStyle"></span>
+                        <input class="centerStyle" type="file">
+                    </div>
+                </div>
+                <textarea>Write something</textarea> 
+            </div>
+            <div class="pickCo">
+                <input type="text" id="pickColor">
+            </div>
+        </div>
+        <div class="bottom">
+            <p>READY TO DROP</p>
+            <span class="iconfont icon-xiguan-24_huaban1 toDrop"></span>
         </div>
     </div>
     <div class="logoNav">
        <span class="iconfont icon-wenhao aboutwhite"></span> 
     </div>
 </section>
+<section id="page3">
+    <p>LOAD CURRENT MEMORY</p>
+</section>
 <div id="mouseD">
     <p id="drawM">DRAW MEMORIES</p>
     <img src="img/mouse.png" alt="">
+    <span></span>
 </div>
-<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

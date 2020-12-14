@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "9066674",
+      "name": "关  闭",
+      "font_class": "guanbi",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
       "icon_id": "16208965",
       "name": "吸管-24",
       "font_class": "xiguan-24_huaban1",
