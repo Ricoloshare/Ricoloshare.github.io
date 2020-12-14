@@ -14,7 +14,6 @@ document.body.onclick = function(){
     canvasScaleFlag = 1;
   }else if(page2Flag){
     canvasScaleFlag = 0;
-    page2Flag = 0;
     drawM.style.display = 'none';
     $('.picall').css('display','flex');
     $('.logoNav').css('display','none');
@@ -35,14 +34,22 @@ let targetNode = $('#canvas')[0];//content监听的元素id
 let options = { attributes: true};
 //回调事件
 function callback(mutationsList, observer) {
-  console.log(111111111);
-  let rd = $('#canvas').css('border-radius');
-  if(rd == '0px' || rd == '0'){
-    alert(111111111);
-    page2.style.display = 'block';
-    drawM.style.display = 'block';
-    page2Flag = 1;
+  if(canvasScaleFlag == 1 && page2Flag == 0){
+    let rd = $('#canvas').css('border-radius');
+    $('body').append(`<p>${rd}</p>`);
+    $('p').css({
+      "position": "relative",
+      'padding-left': '20px',
+      'z-index': '99999',
+    });
+    if(rd == '0px' || rd == '0'|| rd == '0%'){
+      // alert(111111111);
+      page2.style.display = 'block';
+      drawM.style.display = 'block';
+      page2Flag = 1;
+    }
   }
+  
 }
 let mutationObserver = new MutationObserver(callback);
 mutationObserver.observe(targetNode, options);

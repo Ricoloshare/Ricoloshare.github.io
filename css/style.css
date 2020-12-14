@@ -8,7 +8,7 @@ body,html{
   height: 100%;
   background-color: white;    
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-repeat: no-repeat;
 }
 canvas{
@@ -114,7 +114,7 @@ section{
 }
 .picall .leftButton p{
   width: 80%;
-  height: 20px;
+  height: auto;
   text-align: center;
   background-color: #fff;
 }
