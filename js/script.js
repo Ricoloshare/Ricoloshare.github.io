@@ -2,9 +2,14 @@ let winW = window.innerWidth;
 let winH = window.innerHeight;
 let canvasScaleFlag = 0;
 let page2Flag = 0;
+let imgDetail = 0;
+let imgWrite = 0;
+let dropMM = 0;
 let imgMeg = ['1111111111','2222222222222222222','3333333333333','44','55','66','77','88'];
-document.body.onclick = function(){
-  if(canvasScaleFlag == 0){
+let imgUrl = ["img/memory (1).jpg",'img/memory \(2\).jpg','img/memory \(3\).jpg','img/memory (4).jpg','img/memory (5).jpg','img/memory (6).jpg','img/memory (7).jpg','img/memory (8).jpg'];
+let imgColor = ['#ad4','red','#eee','#555','#3ed','#e41','yellow','blue'];
+document.body.onclick = function(e){
+  if(canvasScaleFlag == 0 && page2Flag == 0 && dropMM == 0){
     canvas.style.width = '100px';
     canvas.style.height = '100px';
     canvas.style.left = mouseD.style.left;
@@ -12,38 +17,127 @@ document.body.onclick = function(){
     canvas.style.display = 'block';
     page1.style.display = 'none';
     canvasScaleFlag = 1;
-  }else if(page2Flag){
+  }else if(page2Flag && imgDetail == 0 && imgWrite == 0 && dropMM == 0){ //宫格放图片
     canvasScaleFlag = 0;
     drawM.style.display = 'none';
     $('.picall').css('display','flex');
     $('.logoNav').css('display','none');
+    for(let i = 0; i < imgUrl.length;i++){
+      $('.rightPic ul').append(`<li><a href="#"><img src='${imgUrl[i]}' alt=""></a><span></span></li>`);
+      $('.rightPic ul span').eq(i).css('background',imgColor[i]);
+    }
+  }else if(dropMM == 1){
+    mouseD.style.display = 'none';
+    $('#mouseD span').css('display','none');
+    $('#mouseD p').css('display','none');
+    $('#mouseD p').html('DRAW MEMORIES');
+    $('#page3').css('display','block');
   }
 }
+
+
+$('.leftButton p').mouseover(function(){
+  mouseD.style.display = 'none';
+});
+$('.leftButton p').mouseleave(()=>{
+  if(imgDetail == 0 && imgWrite == 0)
+  mouseD.style.display = 'block';
+});  
 $('.rightPic').mouseover(function(){
   mouseD.style.display = 'none';
 }); 
 $('.rightPic').mouseleave(()=>{
+  if(imgDetail == 0 && imgWrite == 0)
   mouseD.style.display = 'block';
 }); 
-
-$('.rightPic img').click(function(e){
+/*--------------------------------最后界面LOAD CURRENT IMG----------------------------*/
+$('#page3 p').click(function(e){
   e.stopPropagation();
-  console.log(this,$('.rightPic img').index(this))
+  $('#page3').css('display','none');
+  page2.style.display = 'block';
+  drawM.style.display = 'block';
+  $('#mouseD').css('display','block');
+  $('#mouseD p').css('display','block');
+  page2Flag = 1;
+  dropMM = 0;
 });
+/*--------------------------------保存自己的记忆----------------------------*/
+$('.toDrop').click(function(e){
+  e.stopPropagation();
+  let saveColor = $('.picWrite .top').css('background-color');
+  let saveMeg = $('.picWrite .top .ttop textarea').val();
+  imgColor.push(saveColor);
+  imgMeg.push(saveMeg);
+  $('.picWrite').css('display','none');
+  mouseD.style.display = 'block';
+  $('#mouseD span').css('background-color',saveColor);
+  $('#mouseD p').css('display','block');
+  $('#mouseD p').html('CLICK AND DROP MEMORY');
+  dropMM = 1;
+  imgWrite = 0;
+  console.log(saveColor, saveMeg);
+});
+/*------------------------------------选色器----------------------------*/
+$("#pickColor").spectrum({
+  color: "#008040"
+});
+
+/*----------------------------上传图片页面及上传图片显示----------------------------*/
+$('.leftButton p').click(function(e){
+  e.stopPropagation();
+  $('.picall').css('display','none');
+  $('.logoNav').css('display','block');
+  $('.picWrite').css('display','block');
+  mouseD.style.display = 'none !important';
+  imgWrite = 1;
+});
+
+let file = document.querySelector("input[type=file]");
+file.onchange = () => {
+    let fileData = file.files[0];
+    let reader = new FileReader();
+    reader.readAsDataURL(fileData);
+    //读取文件成功后执行的方法函数
+    reader.onload = function(e) {
+        console.log(e);
+        //选择所要显示图片的img，要赋值给img的src就是e中target下result里面的base64编码格式的地址
+        $('.picWrite .top .ttop .file img').css('display','block');
+        $('.picWrite .top .ttop .file .bb').css('display','none');
+        $('.picWrite .top .ttop .file img').attr('src',e.target.result);
+        imgUrl.push(e.target.result);
+    }
+}
+/*------------------------------关闭图片事件----------------------------*/
+$('.closeblack').click(function(e){
+  e.stopPropagation();
+  $('.picShow').css('display','none');
+  $('.picall').css('display','flex');
+  $('.logoNav').css('display','none');
+  mouseD.style.display = 'block';
+  imgDetail = 0;
+});
+/*----------------------------点击宫格图片事件----------------------------*/
+$('.rightPic ul').on('click','img',function(e){
+  e.stopPropagation();
+  let index = $('.rightPic img').index(this);
+  console.log(this,$('.rightPic img').index(this));
+  $('.picShow').css('display','block');
+  $('.picShow .top').css('background',imgColor[index]);
+  $('.picShow .top img').attr('src',imgUrl[index]);
+  $('.picShow .top p').html(imgMeg[index]);
+  $('.picall').css('display','none');
+  $('.logoNav').css('display','block');
+  mouseD.style.display = 'none !important';
+  imgDetail = 1;
+});
+/*----------------------------BG SCALE----------------------------*/
 let targetNode = $('#canvas')[0];//content监听的元素id
 let options = { attributes: true};
 //回调事件
 function callback(mutationsList, observer) {
   if(canvasScaleFlag == 1 && page2Flag == 0){
     let rd = $('#canvas').css('border-radius');
-    $('body').append(`<p>${rd}</p>`);
-    $('p').css({
-      "position": "relative",
-      'padding-left': '20px',
-      'z-index': '99999',
-    });
     if(rd == '0px' || rd == '0'|| rd == '0%'){
-      // alert(111111111);
       page2.style.display = 'block';
       drawM.style.display = 'block';
       page2Flag = 1;
@@ -53,16 +147,15 @@ function callback(mutationsList, observer) {
 }
 let mutationObserver = new MutationObserver(callback);
 mutationObserver.observe(targetNode, options);
-// 鼠标链接滴管
+/*--------------------------  鼠标链接滴管-------------------------------*/
 document.body.onmousemove = function(e) {
   let left = e.clientX - 40;
   let top = e.clientY - 90;
   
   mouseD.style.left=left + "px";
   mouseD.style.top=top + "px";
-
 }
-
+/*-------------------------------------BG-------------------------------*/
 // Initialize the GL context
 let gl = canvas.getContext('webgl');
 if(!gl){
