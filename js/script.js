@@ -30,11 +30,16 @@ document.body.onclick = function(e){
       }
     }
   }else if(dropMM == 1){
+    console.log(imgMeg, imgUrl);
     mouseD.style.display = 'none';
     $('#mouseD span').css('display','none');
     $('#mouseD p').css('display','none');
     $('#mouseD p').html('DRAW MEMORIES');
     $('#page3').css('display','block');
+    $('.picWrite .top .ttop .file img').css('display','none');
+    $('.picWrite .top .ttop .file .bb').css('display','block');
+    $('.picWrite .top .ttop .file img').attr('src','');
+    $('.picWrite .top textarea').val('Write something');
   }
 }
 
@@ -122,7 +127,7 @@ $('.closeblack').click(function(e){
 /*----------------------------点击宫格图片事件----------------------------*/
 $('.rightPic ul').on('click','img',function(e){
   e.stopPropagation();
-  let index = $('.rightPic img').index(this);
+  let index = $('.rightPic img').index(this) - 1;
   console.log(this,$('.rightPic img').index(this));
   $('.picShow').css('display','block');
   $('.picShow .top').css('background',imgColor[index]);
