@@ -140,6 +140,7 @@ $('.toDrop').eq(0).click(function(e){
   mouseD.style.display = 'block';
   $('#mouseD span').css('background-color',saveColor);
   $('#mouseD p').css('display','block');
+  $('#mouseD p').css('right','0px');
   $('#mouseD p').html('CLICK AND DROP MEMORY');
   dropMM = 1;
   imgWrite = 0;
