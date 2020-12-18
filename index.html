@@ -14,7 +14,17 @@
 </head>
 <body>
 <canvas id="canvas"></canvas>
-
+<a id="bd" href="www.baidu.com"><p>h</p></a>
+<svg style="position: absolute;" width="100%" height="100%">   
+    <defs>   
+    <mask id="mask3">   
+    <rect x="0" y="0" width="100%" height="100%" style="stroke:none; fill: #fff"></rect>   
+    <circle id="circle1" cx="50" cy="200" r="50" style="fill: #000" />   
+    <rect x="0" y="0" width="80%" height="78%" style="display:none; stroke:none; fill: #000"></rect>   
+    </mask>   
+    </defs>   
+    <rect x="0" y="0" width="100%" height="100%" style="stroke: none; fill: #fff; mask: url(#mask3)"></rect>   
+</svg>   
 <section id="page1">
     <img src="img/logobg.png" alt="">
     <span class="iconfont icon-wenhao aboutblack"></span>
@@ -31,14 +41,7 @@
                 <span class="iconfont icon-wenhao aboutblack"></span>
             </div>
             <ul>
-                <!-- <li><a href="#"><img src="img/memory (1).jpg" alt=""></a><span></span></li>
-                <li><a href="#"><img src="img/memory (2).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (3).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (4).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (5).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (6).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (7).jpg" alt=""></a></li>
-                <li><a href="#"><img src="img/memory (8).jpg" alt=""></a></li> -->
+
             </ul>
         </div>
     </div>
@@ -77,18 +80,34 @@
        <img src="img/logoW.png" class="centerStyle logoSmall" alt="">
        <span class="iconfont icon-wenhao aboutwhite"></span> 
     </div>
+    <div class="logoBlack" style="display: none;">
+        <img src="img/logoB.png" class="centerStyle logoSmall" alt="">
+        <span class="iconfont icon-wenhao aboutblack"></span> 
+     </div>
 </section>
 <section id="page3">
     <div class="shareCreat centerStyle">
+        <p>CAPTURE NOW</p>
+        <p>SHARE NOW</p>
+    </div>
+    <div class="page3logo">
         <p>LOAD CURRENT MEMORY</p>
-        <p>LOAD CURRENT MEMORY</p>
+        <span class="iconfont icon-xiguan-24_huaban1 toDrop"></span>
     </div>
 </section>
 <div id="mouseD">
-    <p id="drawM">DRAW MEMORIES</p>
+    <p id="drawM">WHAT'S OUR MEMORY LIKE?</p>
     <img src="img/mouse.png" alt="">
     <span></span>
 </div>
+<div class="share" >
+    <img src="img/shareimg.png" alt="">
+    <div class="word">
+        <h1>SHARE YOUR ART + INVITE</h1>
+        <h1>FRIENDS TO CO-LAB WITH YOU</h1>
+    </div>
+</div>
+<script src="js/html2canvas.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

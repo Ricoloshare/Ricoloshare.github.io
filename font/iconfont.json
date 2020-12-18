@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12643260",
+      "name": "问号",
+      "font_class": "wenhao",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
       "icon_id": "9066674",
       "name": "关  闭",
       "font_class": "guanbi",
@@ -25,13 +32,6 @@
       "font_class": "iconjia",
       "unicode": "e600",
       "unicode_decimal": 58880
-    },
-    {
-      "icon_id": "8743418",
-      "name": "问号",
-      "font_class": "wenhao",
-      "unicode": "e645",
-      "unicode_decimal": 58949
     }
   ]
 }

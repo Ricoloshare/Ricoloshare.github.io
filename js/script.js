@@ -8,13 +8,27 @@ let dropMM = 0;
 let imgMeg = ['1111111111','2222222222222222222','3333333333333','44','55','66','77','88'];
 let imgUrl = ["img/memory (1).jpg",'img/memory \(2\).jpg','img/memory \(3\).jpg','img/memory (4).jpg','img/memory (5).jpg','img/memory (6).jpg','img/memory (7).jpg','img/memory (8).jpg'];
 let imgColor = ['#ad4','red','#eee','#555','#3ed','#e41','yellow','blue'];
+let timeid = null;
 document.body.onclick = function(e){
   if(canvasScaleFlag == 0 && page2Flag == 0 && dropMM == 0){
-    canvas.style.width = '100px';
-    canvas.style.height = '100px';
-    canvas.style.left = mouseD.style.left;
-    canvas.style.top = mouseD.style.top;
-    canvas.style.display = 'block';
+    // $('#bd').trigger("click");
+    timeid = setInterval(()=>{
+      let r = parseInt($('#circle1').attr('r'));
+      r += 100;
+      $('#circle1').attr('r',r);
+      if(r >= winW){
+        page2.style.display = 'block';
+        $('svg').css('display','none');
+        $('#mouseD').css('display','block');
+        $('#mouseD p').css('right','60px');
+        drawM.style.display = 'block';
+        page2Flag = 1;
+        clearInterval(timeid);
+      }
+    },200);
+    $('#mouseD').css('display','none');
+    $('#mouseD p').html('DRAW MEMORIES');
+    // $('#mouseD p').css('right','120px');
     page1.style.display = 'none';
     canvasScaleFlag = 1;
   }else if(page2Flag && imgDetail == 0 && imgWrite == 0 && dropMM == 0){ //宫格放图片
@@ -40,6 +54,15 @@ document.body.onclick = function(e){
     $('.picWrite .top .ttop .file .bb').css('display','block');
     $('.picWrite .top .ttop .file img').attr('src','');
     $('.picWrite .top textarea').val('Write something');
+
+    $('svg').css('display','block');
+    $('#circle1').css('display','none');
+    $('rect').css('display','block');
+    console.log($('rect'));
+    $('rect').eq(1).attr('x',winW * 0.1);
+    $('rect').eq(1).attr('y',winH * 0.11);
+    $('.logoNav').css('display','none');
+    $('.logoBlack').css('display','block');
   }
 }
 
@@ -59,18 +82,55 @@ $('.rightPic').mouseleave(()=>{
   mouseD.style.display = 'block';
 }); 
 /*--------------------------------最后界面LOAD CURRENT IMG----------------------------*/
-$('#page3 p').click(function(e){
+$('#page3 span').click(function(e){
   e.stopPropagation();
+  $('svg').css('display','none');
   $('#page3').css('display','none');
   page2.style.display = 'block';
   drawM.style.display = 'block';
   $('#mouseD').css('display','block');
   $('#mouseD p').css('display','block');
+  $('.logoNav').css('display','block');
+  $('.logoBlack').css('display','none');
+  $('#mouseD p').html('DRAW MEMORIES');
   page2Flag = 1;
   dropMM = 0;
 });
+$('#page3 p').eq(0).click(function(e){
+  e.stopPropagation();
+  let timers=new Date();
+  let fullYear=timers.getFullYear();
+  let month=timers.getMonth()+1;
+  let date=timers.getDate();
+  let randoms=Math.random()+'';
+  let numberFileName=fullYear+''+month+date+randoms.slice(3,10);//年月日加上随机数
+  let imgData=canvas.toDataURL();
+  //保存图片
+  let saveFile = function(data, filename){
+      let save_link = document.createElement('a');
+      let p = document.createElement('p');
+      save_link.append(p);
+      save_link.id = 'downloadimg';
+      save_link.href = data;
+      save_link.download = filename;
+      document.body.append(save_link);
+  };
+  let filename = numberFileName + '.png';//最终文件名+文件格式
+  saveFile(imgData,filename);
+  $('#downloadimg p').trigger("click");
+  alert('shoot');
+});
+$('#page3 p').eq(1).click(function(e){
+  e.stopPropagation();
+  $('canvas').css('display','none');
+  $('#page1').css('display','none');
+  $('#page2').css('display','none');
+  $('#page3').css('display','none');
+  $('.share').css('display','flex');
+  dropMM = 0;
+});
 /*--------------------------------保存自己的记忆----------------------------*/
-$('.toDrop').click(function(e){
+$('.toDrop').eq(0).click(function(e){
   e.stopPropagation();
   let saveColor = $('.picWrite .top').css('background-color');
   let saveMeg = $('.picWrite .top .ttop textarea').val();
@@ -138,23 +198,22 @@ $('.rightPic ul').on('click','img',function(e){
   mouseD.style.display = 'none !important';
   imgDetail = 1;
 });
-/*----------------------------BG SCALE----------------------------*/
-let targetNode = $('#canvas')[0];//content监听的元素id
-let options = { attributes: true};
-//回调事件
-function callback(mutationsList, observer) {
-  if(canvasScaleFlag == 1 && page2Flag == 0){
-    let rd = $('#canvas').css('border-radius');
-    if(rd == '0px' || rd == '0'|| rd == '0%'){
-      page2.style.display = 'block';
-      drawM.style.display = 'block';
-      page2Flag = 1;
-    }
-  }
-  
-}
-let mutationObserver = new MutationObserver(callback);
-mutationObserver.observe(targetNode, options);
+// /*----------------------------BG SCALE----------------------------*/
+// let targetNode = $('#canvas')[0];//content监听的元素id
+// let options = { attributes: true};
+// //回调事件
+// function callback(mutationsList, observer) {
+//   if(canvasScaleFlag == 1 && page2Flag == 0){
+//     let rd = $('#canvas').css('border-radius');
+//     if(rd == '0px' || rd == '0'|| rd == '0%'){
+//       page2.style.display = 'block';
+//       drawM.style.display = 'block';
+//       page2Flag = 1;
+//     }
+//   }
+// }
+// let mutationObserver = new MutationObserver(callback);
+// mutationObserver.observe(targetNode, options);
 /*--------------------------  鼠标链接滴管-------------------------------*/
 document.body.onmousemove = function(e) {
   let left = e.clientX - 40;
@@ -162,10 +221,12 @@ document.body.onmousemove = function(e) {
   
   mouseD.style.left=left + "px";
   mouseD.style.top=top + "px";
+  $('#circle1').attr('cx',left);
+  $('#circle1').attr('cy',top + 120);
 }
 /*-------------------------------------BG-------------------------------*/
 // Initialize the GL context
-let gl = canvas.getContext('webgl');
+let gl = canvas.getContext("experimental-webgl", {preserveDrawingBuffer:true});
 if(!gl){
   console.error("Unable to initialize WebGL.");
 }
@@ -225,7 +286,6 @@ void main(){
 //************** Utility functions **************
 
 window.addEventListener( 'resize', onWindowResize, false );
-
 function onWindowResize(){
   canvas.width  = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -246,8 +306,7 @@ function compileShader(shaderSource, shaderType){
   return shader;
 }
 
-//From https://codepen.io/jlfwong/pen/GqmroZ
-//Utility to complain loudly if we fail to find the attribute/uniform
+
 function getAttribLocation(program, name) {
   let attributeLocation = gl.getAttribLocation(program, name);
   if (attributeLocation === -1) {

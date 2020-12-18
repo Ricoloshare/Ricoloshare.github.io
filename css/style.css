@@ -1,7 +1,26 @@
+@font-face {
+  font-family: FRAHVIT;
+  font-weight: normal;
+  font-style: normal;
+  src: url('../FRAHVIT.TTF') format('truetype');
+}
+@font-face {
+  font-family: FRAHV;
+  font-weight: normal;
+  font-style: normal;
+  src: url('../FRAHV.TTF') format('truetype');
+}
+@font-face {
+  font-family: isocpeur;
+  font-weight: normal;
+  font-style: normal;
+  src: url('../isocpeur.ttf') format('truetype');
+}
 *{
   margin: 0;
   bottom: 0;
   box-sizing: border-box;
+  font-family: isocpeur;
 }
 body,html{
   width: 100%;  
@@ -11,7 +30,7 @@ body,html{
   overflow: hidden;
   background-repeat: no-repeat;
 }
-.logoNav{
+.logoNav,.logoBlack{
   width: 100%;
   height: 50px;
   position: relative;
@@ -34,24 +53,20 @@ p{
   left: 50%;
   transform: translate(-50%,-50%);
 }
-.shareCreat{
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
+
 canvas{
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   position: absolute;
-  top: -30%;
-  left: -10%;
-  display: none;
-  animation: sca 1s linear 0.2s 1 forwards;
+  top: 0;
+  left: 0;
+  display: block;
+  /* animation: sca 1s linear 0.2s 1 forwards; */
 }
+
 #mouseD{
-  width: 250px;
-  height: 250px;
+  width: 265px;
+  height: 240px;
   padding-top: 35px;
   position: absolute;
   z-index: 99;
@@ -61,10 +76,10 @@ canvas{
   width: auto;
   height: 20px;
   position: absolute;
-  top: 0px;
+  top: 30px;
   right: 0px;
   padding: 0 10px;
-  display: none;
+  display: block;
 }
 #mouseD img{
   width: 80px;
@@ -86,8 +101,8 @@ canvas{
   height: 40px;
   text-align: center;
   line-height: 40px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 900;
   border-radius: 50%;
   background: black;
   color: white;
@@ -101,8 +116,8 @@ canvas{
   height: 40px;
   text-align: center;
   line-height: 40px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 900;
   border-radius: 50%;
   background: white;
   color: black;
@@ -312,9 +327,32 @@ section{
   background: transparent;
   resize: none;
   outline:none;
+  font-family: FRAHV;
 }
 #page3{
   display: none;
+}
+.shareCreat{
+  width: 60%;
+  height: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.shareCreat p{
+  width: 250px;
+  height: 20px;
+  cursor: pointer;
+}
+.page3logo{
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .closeblack,.toDrop,.uploadFile{
   margin-top: 10px;
@@ -329,6 +367,20 @@ section{
   color: white;
   display: block;
   cursor: pointer;
+}
+.share{
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.word{
+  padding-left: 30px;
+}
+.word h1{
+  font-weight: 900;
+  font-family: FRAHVIT;
 }
 @keyframes sca{
   0%{

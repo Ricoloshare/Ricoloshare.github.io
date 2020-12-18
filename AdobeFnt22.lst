@@ -1,0 +1,98 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FranklinGothic-Heavy
+FamilyName:Franklin Gothic Heavy
+StyleName:Regular
+FullName:Franklin Gothic Heavy
+MenuName:Franklin Gothic Heavy
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:G:\.shortcut-targets-by-id\197ZpzN1glYEKbicy_Dbq16Bqb0OdvCXr\2020_Digital Archive项目\DESIGN\Files\Ideas\液滴\20200526\Mock-up_20201206\Document fonts\FRAHV.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:139400
+FileModTime:1480455668
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Franklin Gothic Heavy
+NameArray:0,Win,1,Franklin Gothic Heavy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:FranklinGothic-HeavyItalic
+FamilyName:Franklin Gothic Heavy
+StyleName:Italic
+FullName:Franklin Gothic Heavy Italic
+MenuName:Franklin Gothic Heavy
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:G:\.shortcut-targets-by-id\197ZpzN1glYEKbicy_Dbq16Bqb0OdvCXr\2020_Digital Archive项目\DESIGN\Files\Ideas\液滴\20200526\Mock-up_20201206\Document fonts\FRAHVIT.TTF
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:152700
+FileModTime:1480455665
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,Franklin Gothic Heavy Italic
+NameArray:0,Win,1,Franklin Gothic Heavy
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+FullName:Minion Pro
+MenuName:Minion Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:G:\.shortcut-targets-by-id\197ZpzN1glYEKbicy_Dbq16Bqb0OdvCXr\2020_Digital Archive项目\DESIGN\Files\Ideas\液滴\20200526\Mock-up_20201206\Document fonts\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:1607181623
+WeightClass:400
+WidthClass:5
+AngleClass:0
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ISOCPEUR
+FamilyName:ISOCPEUR
+StyleName:Regular
+FullName:ISOCPEUR
+MenuName:ISOCPEUR
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:G:\.shortcut-targets-by-id\197ZpzN1glYEKbicy_Dbq16Bqb0OdvCXr\2020_Digital Archive项目\DESIGN\Files\Ideas\液滴\20200526\Mock-up_20201206\Document fonts\isocpeur.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:140516
+FileModTime:1193932515
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,ISOCPEUR
+NameArray:0,Win,1,ISOCPEUR
+%EndFont
+
