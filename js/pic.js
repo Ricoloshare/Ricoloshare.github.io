@@ -44,7 +44,7 @@ let pic = [{
     "imgMeg":"My first Covid test",
     "time":"04.17.2020,",
     "location":"calgary, CAnada",
-    "imgUrl":"img/memory (1).jpg",
+    "imgUrl":"img/memory (1).png",
     "imgColor":"#800080"
 },{
     "imgMeg":"Finally, we can travel now.",
@@ -53,21 +53,40 @@ let pic = [{
     "imgUrl":"img/memory (5).jpg",
     "imgColor":"#ffff00"
 },{
-    "imgMeg":"My Mandatory Quarantine 隔离间,3.31.2020,Beijing, China",
-    "time":"12.25.2019,",
-    "location":"Changyuan, China",
-    "imgUrl":"img/memory (13).jpg",
-    "imgColor":"#89cff0"
+    "imgMeg":"Haru- I guess this is spring.　春、かな？",
+    "time":"05.20.2020,",
+    "location":"Calgary, Canada",
+    "imgUrl":"img/memory (15).png",
+    "imgColor":"#90EE90"
 },{
-    "imgMeg":"My Mandatory Quarantine 隔离间,3.31.2020,Beijing, China",
-    "time":"12.25.2019,",
-    "location":"Changyuan, China",
-    "imgUrl":"img/memory (13).jpg",
-    "imgColor":"#89cff0"
+    "imgMeg":"For getting a ticket to go home, I have downloaded these many apps of airline company!",
+    "time":"05.07.2020,",
+    "location":"Toronto, Canada",
+    "imgUrl":"img/memory (16).png",
+    "imgColor":"#654321"
 },{
-    "imgMeg":"My Mandatory Quarantine 隔离间,3.31.2020,Beijing, China",
-    "time":"12.25.2019,",
-    "location":"Changyuan, China",
-    "imgUrl":"img/memory (13).jpg",
-    "imgColor":"#89cff0"
+    "imgMeg":"Making a documentary of African immigrants and African Chinese residents of Guangzhou",
+    "time":"07.28.2020,",
+    "location":"Guangzhou, China",
+    "imgUrl":"img/memory (8).jpg",
+    "imgColor":"#228B22"
+},{
+    "imgMeg":"Flowers from indoor view- spring has come. ",
+    "time":"04.23.2020,",
+    "location":"New York, USA",
+    "imgUrl":"img/memory (9).jpg",
+    "imgColor":"#FFFFFF"
+},{
+    "imgMeg":"A spring festival that doesn’t feel that uplifting. 今年，春节。",
+    "time":"01.23.2020,",
+    "location":"Shandong, China",
+    "imgUrl":"img/memory (12).jpeg",
+    "imgColor":"#000000"
+},
+{
+    "imgMeg":"Quarantine Food:)",
+    "time":"04.10.2020,",
+    "location":"New York, USA",
+    "imgUrl":"img/memory (10).jpg",
+    "imgColor":"#C0C0C0"
 }]
