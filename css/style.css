@@ -30,15 +30,36 @@ body,html{
   overflow: hidden;
   background-repeat: no-repeat;
 }
+.aboutpage{
+  display: none;
+}
+.about{
+  width: 60%;
+  max-width: 800px;
+  height: 70%;
+  background-color: #fff;
+  padding: 8% 10% 10% 10%;
+  font-size: 18px;
+}
+.about h2{
+  font-family: FRAHVIT;
+}
+.about p{
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  padding-top: 4%;
+}
 .logoNav,.logoBlack{
   width: 100%;
   height: 50px;
   position: relative;
 }
 .logoSmall{
-  padding-top: 20px;
+  padding-top: 10px;
   width: 60px;
-  height: 60px;
+  height: 80px;
 }
 p{
   width: 80%;
@@ -97,7 +118,27 @@ canvas{
   top: 85px;
   left: -10px;
 }
-.aboutblack{
+.aboutblack,.aboutwhite{
+  width: 46px;
+  height: 70px;
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.aboutblack:hover p,.aboutwhite:hover p{
+  opacity: 1;
+}
+.aboutblack p,.aboutwhite p{
+  width: 100%;
+  margin-top: 5px;
+  opacity: 0;
+}
+.aboutblack span,.aboutwhite span{
   width: 40px;
   height: 40px;
   text-align: center;
@@ -105,27 +146,15 @@ canvas{
   font-size: 20px;
   font-weight: 900;
   border-radius: 50%;
+  display: block;
+}
+.aboutblack span{
   background: black;
   color: white;
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 20px;
 }
-.aboutwhite{
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  font-size: 20px;
-  font-weight: 900;
-  border-radius: 50%;
+.aboutwhite span{
   background: white;
   color: black;
-  display: block;
-  position: absolute;
-  right: 20px;
-  top: 20px;
 }
 section{
   width: 100%;
@@ -243,9 +272,7 @@ section{
   height: 80%;
 }
 .picShow .top p{
-  width: 35%;
-  height: 80%;
-  margin-left: 4%;
+  text-align: left;
   font-size: 30px;
   font-family: FRAHV;
   background: transparent;

@@ -27,7 +27,10 @@
 </svg>   
 <section id="page1">
     <img src="img/logobg.png" alt="">
-    <span class="iconfont icon-wenhao aboutblack"></span>
+    <div class="aboutw aboutblack">
+        <span class="iconfont icon-wenhao"></span>
+        <p style="color: #fff; background-color: #000;">ABOUT</p>
+    </div>
 </section>
 <section id="page2">
     <div class="picall">
@@ -38,7 +41,10 @@
         <div class="rightPic">
             <div class="toplogo">
                 <img src="img/logoB.png" class="centerStyle logoSmall" alt="">
-                <span class="iconfont icon-wenhao aboutblack"></span>
+                <div class="aboutw aboutblack">
+                    <span class="iconfont icon-wenhao"></span>
+                    <p style="color: #fff; background-color: #000;">ABOUT</p>
+                </div>
             </div>
             <ul>
 
@@ -48,7 +54,12 @@
     <div class="picShow centerStyle">
         <div class="top">
             <img src="img/memory (2).jpg" alt="">
-            <p>111112233123</p>
+            <div style="width: 35%;height: 80%;margin-left: 4%;">
+                <p></p>
+                <p></p>
+                <p></p>
+            </div>
+            
         </div>
         <div class="bottom">
             <p>BACK</p>
@@ -78,14 +89,27 @@
     </div>
     <div class="logoNav">
        <img src="img/logoW.png" class="centerStyle logoSmall" alt="">
-       <span class="iconfont icon-wenhao aboutwhite"></span> 
+       <div class="aboutw aboutwhite">
+          <span class="iconfont icon-wenhao"></span>
+          <p>ABOUT</p>  
+       </div>
     </div>
-    <div class="logoBlack" style="display: none;">
+    <div class="logoBlack" style="display: none; z-index:999">
         <img src="img/logoB.png" class="centerStyle logoSmall" alt="">
-        <span class="iconfont icon-wenhao aboutblack"></span> 
+        <div class="aboutw aboutblack">
+            <span class="iconfont icon-wenhao"></span>
+            <p style="color: #fff; background-color: #000;">ABOUT</p>
+        </div>
      </div>
 </section>
 <section id="page3">
+    <div style="position: relative; width: 100%; height: 50px; z-index:999">
+        <img src="img/logoB.png" class="centerStyle logoSmall" alt="">
+        <div class="aboutw aboutblack">
+            <span class="iconfont icon-wenhao"></span>
+            <p style="color: #fff; background-color: #000;">ABOUT</p>
+        </div>
+     </div>
     <div class="shareCreat centerStyle">
         <p>CAPTURE NOW</p>
         <p>SHARE NOW</p>
@@ -107,7 +131,27 @@
         <h1>FRIENDS TO CO-LAB WITH YOU</h1>
     </div>
 </div>
+<div class="aboutpage">
+    <div style="width: 100%;height: 50px;position: absolute; top: 0;">
+        <img src="img/logoW.png" class="centerStyle logoSmall" alt="">
+        <div class="aboutw aboutwhite">
+           <span class="iconfont icon-wenhao"></span>
+           <p>ABOUT</p>  
+        </div>
+     </div>
+    <div class="about centerStyle">
+        <h2>Covid Color Lab (CoLab)</h2>
+        <p>The global pandemic has forever changed our expectations for public spaces
+            and social gatherings. The Covid Color Lab responds to this decline of our
+            communal experience.</p>
+        <p>As individual memories about the pandemic encounter, merge, and clash with
+            each other in CoLab, we invite the visitor to explore unthought possibilities of
+            connection between human being during a moment of crisis.</p>  
+    </div>
+    
+</div>
 <script src="js/html2canvas.min.js"></script>
+<script src="js/pic.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

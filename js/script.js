@@ -1,14 +1,15 @@
-let winW = window.innerWidth;
-let winH = window.innerHeight;
+const winW = window.innerWidth;
+const winH = window.innerHeight;
 let canvasScaleFlag = 0;
 let page2Flag = 0;
 let imgDetail = 0;
 let imgWrite = 0;
 let dropMM = 0;
-let imgMeg = ['1111','222','333','44','55','66','77','88'];
-let imgUrl = ["img/memory (1).jpg",'img/memory \(2\).jpg','img/memory \(3\).jpg','img/memory (4).jpg','img/memory (5).jpg','img/memory (6).jpg','img/memory (7).jpg','img/memory (8).jpg'];
-let imgColor = ['#ad4','red','#eee','#555','#3ed','#e41','yellow','blue'];
+// let imgMeg = ['1111','222','333','44','55','66','77','88'];
+// let imgUrl = ["img/memory (1).jpg",'img/memory \(2\).jpg','img/memory \(3\).jpg','img/memory (4).jpg','img/memory (5).jpg','img/memory (6).jpg','img/memory (7).jpg','img/memory (8).jpg'];
+// let imgColor = ['#ad4','red','#eee','#555','#3ed','#e41','yellow','blue'];
 let timeid = null;
+let currentPage = 0;
 document.body.onclick = function(e){
   if(canvasScaleFlag == 0 && page2Flag == 0 && dropMM == 0){
     // $('#bd').trigger("click");
@@ -36,15 +37,15 @@ document.body.onclick = function(e){
     drawM.style.display = 'none';
     $('.picall').css('display','flex');
     $('.logoNav').css('display','none');
-    if($('.rightPic ul li').length < imgUrl.length){
+    if($('.rightPic ul li').length < pic.length){
       $('.rightPic ul').empty();
-      for(let i = 0; i < imgUrl.length;i++){
-        $('.rightPic ul').append(`<li><a href="#"><img src='${imgUrl[i]}' alt=""></a><span></span></li>`);
-        $('.rightPic ul span').eq(i).css('background',imgColor[i]);
+      console.log(pic[0].imgUrl,pic)
+      for(let i = 0; i < pic.length;i++){
+        $('.rightPic ul').append(`<li><a href="#"><img src='${pic[i].imgUrl}' alt=""></a><span></span></li>`);
+        $('.rightPic ul span').eq(i).css('background',pic[i].imgColor);
       }
     }
   }else if(dropMM == 1){
-    console.log(imgMeg, imgUrl);
     mouseD.style.display = 'none';
     $('#mouseD span').css('display','none');
     $('#mouseD p').css('display','none');
@@ -55,6 +56,7 @@ document.body.onclick = function(e){
     $('.picWrite .top .ttop .file img').attr('src','');
     $('.picWrite .top textarea').val('Write something');
 
+    $('#page2').css('display','none');
     $('svg').css('display','block');
     $('#circle1').css('display','none');
     $('rect').css('display','block');
@@ -66,6 +68,38 @@ document.body.onclick = function(e){
   }
 }
 
+/*--------------------------------About Page----------------------------*/
+$('.aboutw span').click(function(e){
+  e.stopPropagation();
+  if($('.aboutw span').attr('class').indexOf('icon-wenhao') != -1){
+    $('.aboutpage').css('display','block');
+    $('.aboutw span').removeClass('icon-wenhao');
+    $('.aboutw span').addClass('icon-guanbi');
+    $('.aboutw p').html('CLOSE');
+    for(let i = 1; i <= 3; i++){
+      if($('#page'+i).css('display') == 'block'){
+        currentPage = i -1;
+      }
+    }
+    $('section').css('display','none');
+    $('svg').css('display','none');
+  }else if($('.aboutw span').attr('class').indexOf('icon-guanbi') != -1){
+    e.stopPropagation();
+    $('.aboutpage').css('display','none');
+    $('.aboutw span').removeClass('icon-guanbi');
+    $('.aboutw span').addClass('icon-wenhao');
+    $('.aboutw p').html('ABOUT');
+    $('section').eq(currentPage).css('display','block');
+    if(currentPage == 0) $('svg').css('display','block');
+    if(currentPage == 2) $('svg').css('display','block');
+  }
+  
+
+  // $(".icon-guanbi").unbind('click').on('click',function(e){
+    
+  //   // console.log('ss');
+  // });
+});
 
 $('.leftButton p').mouseover(function(){
   mouseD.style.display = 'none';
@@ -82,7 +116,7 @@ $('.rightPic').mouseleave(()=>{
   mouseD.style.display = 'block';
 }); 
 /*--------------------------------最后界面LOAD CURRENT IMG----------------------------*/
-$('#page3 span').click(function(e){
+$('#page3 .toDrop').click(function(e){
   e.stopPropagation();
   $('svg').css('display','none');
   $('#page3').css('display','none');
@@ -96,7 +130,7 @@ $('#page3 span').click(function(e){
   page2Flag = 1;
   dropMM = 0;
 });
-$('#page3 p').eq(0).click(function(e){
+$('.shareCreat p').eq(0).click(function(e){
   e.stopPropagation();
   let timers=new Date();
   let fullYear=timers.getFullYear();
@@ -120,7 +154,7 @@ $('#page3 p').eq(0).click(function(e){
   $('#downloadimg p').trigger("click");
   alert('shoot');
 });
-$('#page3 p').eq(1).click(function(e){
+$('.shareCreat p').eq(1).click(function(e){
   e.stopPropagation();
   $('canvas').css('display','none');
   $('#page1').css('display','none');
@@ -134,8 +168,16 @@ $('.toDrop').eq(0).click(function(e){
   e.stopPropagation();
   let saveColor = $('.picWrite .top').css('background-color');
   let saveMeg = $('.picWrite .top .ttop textarea').val();
-  imgColor.push(saveColor);
-  imgMeg.push(saveMeg);
+  let saveimg = $('.picWrite .top .ttop .file img').attr('src');
+  let time = new Date();
+  pic.push({
+    "imgMeg":saveMeg,
+    "time":`${time.getFullYear}-${time.getMonth + 1}-${time.getDate},`,
+    "location":"Beijing, China",
+    "imgUrl":saveimg,
+    "imgColor":saveColor
+  });
+  console.log(`${time.getDate}.${time.getMonth}.${time.getFullYear}`);
   $('.picWrite').css('display','none');
   mouseD.style.display = 'block';
   $('#mouseD span').css('background-color',saveColor);
@@ -154,6 +196,7 @@ $("#pickColor").spectrum({
 /*----------------------------上传图片页面及上传图片显示----------------------------*/
 $('.leftButton p').click(function(e){
   e.stopPropagation();
+  $('#mouseD').css('display','none');
   $('.picall').css('display','none');
   $('.logoNav').css('display','block');
   $('.picWrite').css('display','block');
@@ -173,7 +216,6 @@ file.onchange = () => {
         $('.picWrite .top .ttop .file img').css('display','block');
         $('.picWrite .top .ttop .file .bb').css('display','none');
         $('.picWrite .top .ttop .file img').attr('src',e.target.result);
-        imgUrl.push(e.target.result);
     }
 }
 /*------------------------------关闭图片事件----------------------------*/
@@ -190,10 +232,13 @@ $('.rightPic ul').on('click','img',function(e){
   e.stopPropagation();
   let index = $('.rightPic img').index(this) - 1;
   console.log(this,$('.rightPic img').index(this));
+  $('#mouseD').css('display','none');
   $('.picShow').css('display','block');
-  $('.picShow .top').css('background',imgColor[index]);
-  $('.picShow .top img').attr('src',imgUrl[index]);
-  $('.picShow .top p').html(imgMeg[index]);
+  $('.picShow .top').css('background',pic[index].imgColor);
+  $('.picShow .top img').attr('src',pic[index].imgUrl);
+  $('.picShow .top p').eq(0).html(pic[index].imgMeg);
+  $('.picShow .top p').eq(1).html(pic[index].time);
+  $('.picShow .top p').eq(2).html(pic[index].location);
   $('.picall').css('display','none');
   $('.logoNav').css('display','block');
   mouseD.style.display = 'none !important';
@@ -224,6 +269,11 @@ document.body.onmousemove = function(e) {
   mouseD.style.top=top + "px";
   $('#circle1').attr('cx',left);
   $('#circle1').attr('cy',top + 120);
+  if(left > winW - 100 && left < winW - 60 && top < 0){
+    $('#mouseD').css('display','none');
+  }else if(page2Flag == 0 || page2Flag && imgDetail == 0 && imgWrite == 0 && dropMM == 0){
+    $('#mouseD').css('display','block');
+  }
 }
 /*-------------------------------------BG-------------------------------*/
 // Initialize the GL context
