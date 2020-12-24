@@ -234,6 +234,9 @@ $('.rightPic ul').on('click','a',function(e){
   $('#mouseD').css('display','none');
   $('.picShow').css('display','block');
   $('.picShow .top').css('background',pic[index].imgColor);
+  if(pic[index].imgColor == '#000000'){
+    $('.picShow .top p').css('color','#fff');
+  }
   $('.picShow .top img').attr('src',pic[index].imgUrl);
   $('.picShow .top p').eq(0).html(pic[index].imgMeg);
   $('.picShow .top p').eq(1).html(pic[index].time);
