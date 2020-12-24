@@ -41,7 +41,7 @@ document.body.onclick = function(e){
       $('.rightPic ul').empty();
       console.log(pic[0].imgUrl,pic)
       for(let i = 0; i < pic.length;i++){
-        $('.rightPic ul').append(`<li><a href="#"><img src='${pic[i].imgUrl}' alt=""></a><span></span></li>`);
+        $('.rightPic ul').append(`<li><a href="#" style="background-image: url('${pic[i].imgUrl}')";></a><span></span></li>`);
         $('.rightPic ul span').eq(i).css('background',pic[i].imgColor);
       }
     }
@@ -228,10 +228,9 @@ $('.closeblack').click(function(e){
   imgDetail = 0;
 });
 /*----------------------------点击宫格图片事件----------------------------*/
-$('.rightPic ul').on('click','img',function(e){
+$('.rightPic ul').on('click','a',function(e){
   e.stopPropagation();
-  let index = $('.rightPic img').index(this) - 1;
-  console.log(this,$('.rightPic img').index(this));
+  let index = $('.rightPic ul li a').index(this);
   $('#mouseD').css('display','none');
   $('.picShow').css('display','block');
   $('.picShow .top').css('background',pic[index].imgColor);
