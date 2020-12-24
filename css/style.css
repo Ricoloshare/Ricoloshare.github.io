@@ -277,6 +277,7 @@ section{
   /* height: 80%; */
 }
 .picShow .top p{
+  width: 100%;
   text-align: left;
   font-size: 30px;
   font-family: FRAHV;
