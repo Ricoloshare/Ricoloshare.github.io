@@ -166,6 +166,7 @@ section{
   right: 0;
 }
 #page1 img{
+  width: 400px;
   position: absolute;
   top:50%;
   left: 50%;
@@ -217,14 +218,23 @@ section{
   height: 10%;
   position: relative;
 }
-.picall .rightPic ul{
+.picall .rightPic .wrapper{
   width: 100%;
   height: 90%;
   display: flex;
   justify-content: space-around;
   list-style-type: none;
   flex-wrap: wrap;
-  overflow: auto;
+  /* overflow: auto; */
+  padding: 0;
+}
+.picall .rightPic ul{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  flex-wrap: wrap;
+  /* overflow: auto; */
   padding: 0;
 }
 .picall .rightPic ul li{

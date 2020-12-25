@@ -67,7 +67,7 @@ document.body.onclick = function(e){
     $('.logoBlack').css('display','block');
   }
 }
-
+$(".mCustomScrollbar").mCustomScrollbar();
 /*--------------------------------About Page----------------------------*/
 $('.aboutw span').click(function(e){
   e.stopPropagation();
@@ -194,7 +194,7 @@ $("#pickColor").spectrum({
 });
 
 /*----------------------------上传图片页面及上传图片显示----------------------------*/
-$('.leftButton p').click(function(e){
+$('.leftButton p').eq(0).click(function(e){
   e.stopPropagation();
   $('#mouseD').css('display','none');
   $('.picall').css('display','none');
@@ -202,6 +202,15 @@ $('.leftButton p').click(function(e){
   $('.picWrite').css('display','block');
   mouseD.style.display = 'none !important';
   imgWrite = 1;
+});
+
+$('.leftButton p').eq(1).click(function(e){
+  e.stopPropagation();
+  $('#mouseD').css('display','block');
+  $('#mouseD p').css('display','block');
+  $('.picall').css('display','none');
+  $('.logoNav').css('display','block');
+  imgWrite = 0;
 });
 
 let file = document.querySelector("input[type=file]");

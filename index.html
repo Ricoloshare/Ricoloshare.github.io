@@ -8,9 +8,11 @@
 <meta name="description" content="lab" /> 
 <link rel="stylesheet" href="font/iconfont.css">
 <link rel="stylesheet" type="text/css" href="css/spectrum.css">
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css">
 <link rel="stylesheet" href="css/style.css">
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/spectrum.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
 </head>
 <body>
 <canvas id="canvas"></canvas>
@@ -35,8 +37,8 @@
 <section id="page2">
     <div class="picall">
         <div class="leftButton">
-            <p>DROP MY MEMORY</p>
-            <p>RE-DROP MEMORY</p>
+            <p>GIVE</p>
+            <p>TAKE</p>
         </div>
         <div class="rightPic">
             <div class="toplogo">
@@ -46,9 +48,11 @@
                     <p style="color: #fff; background-color: #000;">ABOUT</p>
                 </div>
             </div>
-            <ul>
-
-            </ul>
+            <div class="wrapper mCustomScrollbar" data-mcs-theme="dark">
+                <ul>
+                </ul> 
+            </div>
+            
         </div>
     </div>
     <div class="picShow centerStyle">
@@ -58,8 +62,7 @@
                 <p style="display: -webkit-box;-webkit-line-clamp: 8;-webkit-box-orient: vertical;overflow: hidden;"></p>
                 <p></p>
                 <p></p>
-            </div>
-            
+            </div>   
         </div>
         <div class="bottom">
             <p>BACK</p>
