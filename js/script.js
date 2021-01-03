@@ -286,6 +286,21 @@ document.body.onmousemove = function(e) {
     $('#mouseD').css('display','block');
   }
 }
+document.body.ontouchmove = function(e) {
+  e = e.touches[0];
+  let left = e.clientX - 40;
+  let top = e.clientY - 90;
+  
+  mouseD.style.left=left + "px";
+  mouseD.style.top=top + "px";
+  $('#circle1').attr('cx',left);
+  $('#circle1').attr('cy',top + 120);
+  if(left > winW - 100 && left < winW - 60 && top < 0){
+    $('#mouseD').css('display','none');
+  }else if(page2Flag == 0 || page2Flag && imgDetail == 0 && imgWrite == 0 && dropMM == 0){
+    $('#mouseD').css('display','block');
+  }
+}
 /*-------------------------------------BG-------------------------------*/
 // Initialize the GL context
 let gl = canvas.getContext("experimental-webgl", {preserveDrawingBuffer:true});
