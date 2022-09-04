@@ -13,15 +13,33 @@ html, body{
     position: relative;
     overflow: hidden;
 }
-.el{
-    width: 50px;
+.el1{
+    width: 42px;
+    height: 60px;
+    position: absolute;
+    top: 100px;
+}
+.el2{
+    width: 20px;
     height: 70px;
+    position: absolute;
+    top: 100px;
+}
+.el3{
+    width: 49px;
+    height: 68px;
+    position: absolute;
+    top: 100px;
+}
+.el4{
+    width: 68px;
+    height: 68px;
     position: absolute;
     top: 100px;
 }
 .word1{
     width: 30px;
-    height: 75px;
+    height: 74px;
     position: absolute;
     left: 300px;
 }
