@@ -11,8 +11,8 @@ $(".el").mousedown(function (e) {
     document.onmousemove = function (e) {
         e.stopPropagation();
         e = e || window.event
-        object_el.style.left = e.clientX - offsetX + "px";
-        object_el.style.top = e.clientY - offsetY + "px";
+        object_el.style.left = e.clientX - offsetX < 0 ? 10  : e.clientX - offsetX + "px";
+        object_el.style.top = e.clientY - offsetY < 0 ? 10  : e.clientY - offsetY + "px";
     }
     //鼠标抬起
     document.onmouseup = function (e) {
@@ -41,8 +41,8 @@ $(".word1").mousedown(function (e) {
     document.onmousemove = function (e) {
         e.stopPropagation();
         e = e || window.event
-        object_el.style.left = e.clientX - offsetX + "px";
-        object_el.style.top = e.clientY - offsetY + "px";
+        object_el.style.left = e.clientX - offsetX < 0 ? 10  : e.clientX - offsetX + "px";
+        object_el.style.top = e.clientY - offsetY < 0 ? 10  : e.clientY - offsetY + "px";
     }
     //鼠标抬起
     document.onmouseup = function (e) {
@@ -69,8 +69,8 @@ $(".word2").mousedown(function (e) {
     document.onmousemove = function (e) {
         e.stopPropagation();
         e = e || window.event
-        object_el.style.left = e.clientX - offsetX + "px";
-        object_el.style.top = e.clientY - offsetY + "px";
+        object_el.style.left = e.clientX - offsetX < 0 ? 10  : e.clientX - offsetX + "px";
+        object_el.style.top = e.clientY - offsetY < 0 ? 10  : e.clientY - offsetY + "px";
     }
     //鼠标抬起
     document.onmouseup = function (e) {
@@ -101,8 +101,9 @@ for (let i = 0; i < oEL.length; i++) {
         document.ontouchmove = function (e) {
             e.stopPropagation();
             e = e || window.event
-            object_el.style.left = e.targetTouches[0].clientX - offsetX + "px";
-            object_el.style.top = e.targetTouches[0].clientY - offsetY + "px";
+            object_el.style.left = e.targetTouches[0].clientX - offsetX < 0 ? 10  : e.targetTouches[0].clientX - offsetX + "px";
+        object_el.style.top = e.targetTouches[0].clientY - offsetY < 0 ? 10  : e.targetTouches[0].clientY - offsetY + "px";
+            
         }
         //鼠标抬起
         document.ontouchend = function (e) {
@@ -132,8 +133,9 @@ document.querySelectorAll(".word1")[0].addEventListener('touchstart',
         document.ontouchmove = function (e) {
             e.stopPropagation();
             e = e || window.event
-            object_el.style.left = e.targetTouches[0].clientX - offsetX + "px";
-            object_el.style.top = e.targetTouches[0].clientY - offsetY + "px";
+            object_el.style.left = e.targetTouches[0].clientX - offsetX < 0 ? 10  : e.targetTouches[0].clientX - offsetX + "px";
+        object_el.style.top = e.targetTouches[0].clientY - offsetY < 0 ? 10  : e.targetTouches[0].clientY - offsetY + "px";
+            
         }
         //鼠标抬起
         document.ontouchend = function (e) {
@@ -158,8 +160,9 @@ document.querySelectorAll(".word2")[0].addEventListener('touchstart', function (
     document.ontouchmove = function (e) {
         e.stopPropagation();
         e = e || window.event
-        object_el.style.left = e.targetTouches[0].clientX - offsetX + "px";
-        object_el.style.top = e.targetTouches[0].clientY - offsetY + "px";
+        object_el.style.left = e.targetTouches[0].clientX - offsetX < 0 ? 10  : e.targetTouches[0].clientX - offsetX + "px";
+        object_el.style.top = e.targetTouches[0].clientY - offsetY < 0 ? 10  : e.targetTouches[0].clientY - offsetY + "px";
+            
     }
     //鼠标抬起
     document.ontouchend = function (e) {
