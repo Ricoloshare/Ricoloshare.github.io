@@ -6,8 +6,8 @@ html, body{
 }
 
 .bg{
-    width: 1100px;
-    height: 1100px;
+    width: 100%;
+    height: 100%;
     background: url('./img/bg.png') no-repeat fixed center;
     background-size: contain;
     position: relative;
@@ -17,48 +17,56 @@ html, body{
     width: 42px;
     height: 60px;
     position: absolute;
-    top: 100px;
-    right: 10px;
+    top: 70%;
+    z-index: 9999;
+    right: 10%;
 }
 .el2{
     width: 20px;
     height: 70px;
     position: absolute;
-    top: 120px;
-    right: 110px;
+    top: 60%;
+    right: 30%;
+    z-index: 9999;
 
 }
 .el3{
     width: 49px;
     height: 68px;
     position: absolute;
-    right: 10px;
-    top: 160px;
+    right: 6%;
+    z-index: 9999;
+    top: 20%;
 }
 .el4{
     width: 68px;
     height: 68px;
     position: absolute;
-    top: 270px;
-    right: 30px;
+    top: 5%;
+    right: 10%;
+    z-index: 9999;
 }
 .el5{
     width: 48px;
     height: 50px;
     position: absolute;
-    top: 50px;
-    right: 20px;
+    top: 5%;
+    right: 20%;
+    z-index: 9999;
 }
 .word1{
     width: 30px;
     height: 74px;
     position: absolute;
-    right: 30px;
+    right: 5%;
+    z-index: 9999;
 }
 .word2{
     width: 85px;
     height: 82px;
     position: absolute;
-    right: 10px;
-    top: 200px;
+    right: 10%;
+    top: 20%;
+    z-index: 9999;
+
 }
